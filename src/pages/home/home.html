@@ -1,17 +1,22 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="duckcoin">
+    <ion-title>Duckcoin</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+  <h2>La monnaie solidaire</h2>
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+  DuckCoin, c'est la monnaie qui rend aimable, redonne le sourire et change la face du monde.
+  Elle a été faite pour des gens sympas, juste comme toi.
   </p>
   <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+    <img src="assets/imgs/logo.jpg" />
   </p>
+  <p>Vous avez selectionné {{selected.title}}</p>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      {{ item.title }} vaut {{ item.price }} {{ item.currency }}
+    </button>
+  </ion-list>
 </ion-content>
