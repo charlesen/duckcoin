@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Détails de la transaction
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Fermer</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <h2>{{transaction.recipient}}</h2>
+        <p>Vous avez reçu {{transaction.amount | currency:'DCK'}} de {{transaction.sender}}</p>
+      </ion-item>
+  </ion-list>
+</ion-content>

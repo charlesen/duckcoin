@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MiningPage } from '../mining/mining';
 import { WalletPage } from '../wallet/wallet';
 import { HomePage } from '../home/home';
+import { SettingPage } from '../setting/setting'
 import { ProfilePage } from '../profile/profile'; // On importe la nouvelle page ICI
 
 @Component({
@@ -14,6 +15,7 @@ export class TabsPage {
   tab2Root = MiningPage;
   tab3Root = WalletPage;
   tab4Root = ProfilePage; // On créé le nouvel onglet
+  tab5Root = SettingPage;
 
   constructor() {
 

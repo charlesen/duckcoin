@@ -1,3 +1,9 @@
 page-profile {
+  button[ion-button] {
+    background: color($colors, duckcoin, base);
+  }
+}
 
+img {
+  width : $max-width/10;
 }

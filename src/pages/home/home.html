@@ -5,18 +5,28 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>La monnaie solidaire</h2>
-  <p>
+  <h2 text-center>La monnaie solidaire</h2>
+  <p text-justify>
   DuckCoin, c'est la monnaie qui rend aimable, redonne le sourire et change la face du monde.
   Elle a été faite pour des gens sympas, juste comme toi.
   </p>
   <p>
     <img src="assets/imgs/logo.jpg" />
   </p>
-  <p>Vous avez selectionné {{selected.title}}</p>
-  <ion-list>
+  <p *ngIf="selected">Vous avez selectionné {{selected.title}}</p>
+  <!-- <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
       {{ item.title }} vaut {{ item.price }} {{ item.currency }}
     </button>
+  </ion-list> -->
+
+  <ion-list>
+    <ion-list-header>
+      Dernières transactions
+    </ion-list-header>
+    <button ion-item *ngFor="let transact of transactions">
+      {{transact.recipient | uppercase}} a reçu {{transact.amount | currency:'€'}} de {{transact.sender | uppercase}}
+    </button>
   </ion-list>
+
 </ion-content>

@@ -1,8 +1,8 @@
 {
   "name": "duckcoin",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Charles EDOU NZE",
+  "homepage": "https://duckcoin.charlesen.fr",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -36,5 +36,5 @@
     "@ionic/app-scripts": "3.1.8",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "Application mobile de gestion de portefeuille numérique"
 }
