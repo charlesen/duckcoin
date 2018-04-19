@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+const apiUrl='https://duckcoin.charlesen.fr'
 
 /**
- * Generated class for the TransactionComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+** Composant Transaction
+**/
 @Component({
   selector: 'transaction',
   templateUrl: 'transaction.html'
 })
 export class TransactionComponent {
 
-  text: string;
+  transactions: any[] = [];
 
-  constructor() {
-    console.log('Hello TransactionComponent Component');
-    this.text = 'Hello World';
+  constructor(private http: HttpClient) {
+    this.http.get(`${apiUrl}/transactions`).subscribe(
+      data => {
+      this.transactions = data['transactions'];
+    }, err => {
+        console.log("Error occured.")
+    });
   }
 
 }

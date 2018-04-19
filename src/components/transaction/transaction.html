@@ -1,4 +1,8 @@
-<!-- Generated template for the TransactionComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-list>
+  <ion-list-header text-center>
+    Dernières transactions
+  </ion-list-header>
+  <button ion-item *ngFor="let transact of transactions">
+    {{transact.recipient | uppercase}} a reçu {{transact.amount | currency:'€'}} de {{transact.sender | uppercase}}
+  </button>
+</ion-list>

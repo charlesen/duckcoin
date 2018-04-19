@@ -1,10 +1,12 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { DuckCoinApp } from './app.component';
 
-//Composants
-import {TransactionComponent} from '../components/components';
+//Modules
+import {ComponentsModule} from '../components/components.module';
+import {DirectivesModule} from '../directives/directives.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MiningPage } from '../pages/mining/mining';
 import { WalletPage } from '../pages/wallet/wallet';
@@ -15,28 +17,32 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { UserProvider } from '../providers/user/user';
+import { DckProvider } from '../providers/dck/dck';
 
 @NgModule({
   declarations: [
-    MyApp,
+    DuckCoinApp,
     MiningPage,
     WalletPage,
     HomePage,
     SettingPage,
     ProfilePage, // On la déclare ici
     TabsPage,
-    TransactionComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{
+    HttpClientModule,
+    ComponentsModule,
+    DirectivesModule,
+    IonicModule.forRoot(DuckCoinApp,{
         // tabsPlacement: 'top',
         backButtonText: 'Retour'
     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    DuckCoinApp,
     MiningPage,
     WalletPage,
     HomePage,
@@ -47,7 +53,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserProvider,
+    DckProvider
   ]
 })
 export class AppModule {}
