@@ -6,6 +6,8 @@ import { DuckCoinApp } from './app.component';
 //Modules
 import {ComponentsModule} from '../components/components.module';
 import {DirectivesModule} from '../directives/directives.module';
+import {PipesModule} from '../pipes/pipes.module';
+import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MiningPage } from '../pages/mining/mining';
@@ -38,6 +40,10 @@ import { DckProvider } from '../providers/dck/dck';
     IonicModule.forRoot(DuckCoinApp,{
         // tabsPlacement: 'top',
         backButtonText: 'Retour'
+    }),
+    IonicStorageModule.forRoot({
+      name: '__duckcoindb',
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
     })
   ],
   bootstrap: [IonicApp],

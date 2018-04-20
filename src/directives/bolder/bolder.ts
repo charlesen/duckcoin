@@ -9,8 +9,7 @@ import { Directive, ElementRef } from '@angular/core';
 export class BolderDirective {
 
   constructor(Element: ElementRef) {
-    console.log('Hello bolderDirective Directive');
-    console.log('Element :: ',Element);
+    Element.nativeElement.style.fontWeight = 'bolder';
   }
 
 }

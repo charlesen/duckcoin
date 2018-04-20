@@ -14,4 +14,8 @@ export class UserProvider {
     console.log('Hello UserProvider Provider');
   }
 
+  isConnected() {
+    return true;
+  }
+
 }
