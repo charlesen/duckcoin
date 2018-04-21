@@ -16,6 +16,8 @@ import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile'; // On importe la nouvelle page ICI
 import { SettingPage } from '../pages/setting/setting'; // On importe la nouvelle page ICI
 import { TabsPage } from '../pages/tabs/tabs';
+import {ModalPage} from '../pages/home/modal/modal';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,6 +33,8 @@ import { DckProvider } from '../providers/dck/dck';
     SettingPage,
     ProfilePage, // On la déclare ici
     TabsPage,
+    ModalPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
